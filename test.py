@@ -54,10 +54,12 @@ def fit(epoch, model, optimizer, criterion, msssim,  device, data_loader, phase=
     if phase == 'training':
         model.train()
     if phase == 'training' and epoch==0:
-        print(123)
-        # model.load_state_dict(torch.load(
-        #         'output_noshare/weight.pth', map_location=device))
+        print("resume training need to reload weight")
+
     else:
+        model.load_state_dict(torch.load(
+                'output/weight_100.pth', map_location=device))
+                # load_network(model)
         model.eval()
     show = 0
     running_loss = 0
@@ -91,17 +93,8 @@ def fit(epoch, model, optimizer, criterion, msssim,  device, data_loader, phase=
             low_cr = low[:,2:3,:,:].to(device)
             high_cr = high[:,2:3,:,:].to(device)
 
-            if phase == 'predict':
-                model.eval()
-                model.load_state_dict(torch.load(
-                    'output/weight_best.pth', map_location=device))
-                # load_network(model)
-
             if phase == 'training':
                 optimizer.zero_grad()
-
-            else:
-                model.eval()
 
             # with torch.no_grad():
             start = torch.cuda.Event(enable_timing=True)
