@@ -261,9 +261,9 @@ class HDRdatasets_dynamic_compose(data.Dataset):
         gt_img_train = []
         img = []
         if train:
-            for i in os.listdir(r'C:\Users\admin\Desktop\HDR\random_select'):
+            for i in os.listdir(r'../random_select'):
                 img_list = glob.glob(
-                    r'C:\Users\admin\Desktop\HDR\random_select' + '\\' + i + r'\*.JPG')
+                    r'../random_select' + '\\' + i + r'\*.JPG')
                 for j in img_list:
                     # print(j)
                     if 'GT.JPG' in j:
@@ -271,11 +271,11 @@ class HDRdatasets_dynamic_compose(data.Dataset):
                     else:
                         img.append(j)
         else:
-            for i in os.listdir(r'C:\Users\admin\Desktop\HDR\random_select2'):
+            for i in os.listdir(r'../random_select2'):
                 img_list = glob.glob(
-                    r'C:\Users\admin\Desktop\HDR\random_select2' + '\\' + i + r'\*.JPG')
+                    r'../random_select2' + '\\' + i + r'\*.JPG')
                 img_list1 = glob.glob(
-                    r'C:\Users\admin\Desktop\HDR\random_select2' + '\\' + i + r'\*.png')
+                    r'../random_select2' + '\\' + i + r'\*.png')
                 for j in img_list:
                     # print(j)
                     if 'GT.JPG' in j:
@@ -362,9 +362,9 @@ class HDRdatasets_lapacian(data.Dataset):
         gt_img_train = []
         img = []
         if train:
-            for i in os.listdir(r'C:\Users\admin\Desktop\HDR\random_select'):
+            for i in os.listdir(r'../random_select'):
                 img_list = glob.glob(
-                    r'C:\Users\admin\Desktop\HDR\random_select' + '\\' + i + r'\*.JPG')
+                    r'../random_select' + '//' + i + r'/*.JPG')
                 for j in img_list:
                     # print(j)
                     if 'GT.JPG' in j:
@@ -372,11 +372,11 @@ class HDRdatasets_lapacian(data.Dataset):
                     else:
                         img.append(j)
         else:
-            for i in os.listdir(r'C:\Users\admin\Desktop\HDR\random_select2'):
+            for i in os.listdir(r'../random_select2'):
                 img_list = glob.glob(
-                    r'C:\Users\admin\Desktop\HDR\random_select2' + '\\' + i + r'\*.JPG')
+                    r'../random_select2' + '//' + i + r'/*.JPG')
                 img_list1 = glob.glob(
-                    r'C:\Users\admin\Desktop\HDR\random_select2' + '\\' + i + r'\*.png')
+                    r'../random_select2' + '//' + i + r'/*.png')
                 for j in img_list:
                     # print(j)
                     if 'GT.JPG' in j:
@@ -481,11 +481,11 @@ class HDRdatasets_other_dataset(data.Dataset):
         gt_img_train = []
         img = []
         if train:
-            for i in os.listdir(r'C:\Users\admin\Desktop\HDR\random_select'):
+            for i in os.listdir(r'../random_select'):
                 img_list = glob.glob(
-                    r'C:\Users\admin\Desktop\HDR\random_select' + '\\' + i + r'\*.JPG')
+                    r'../random_select' + '//' + i + r'/*.JPG')
                 # print(img_list)
-#                 img_list1 = glob.glob('.\matlab_compose'+'\\'+i+r'\*.png')
+#                 img_list1 = glob.glob('./matlab_compose'+'//'+i+r'/*.png')
                 for j in img_list:
                     # print(j)
                     if 'GT.JPG' in j:
@@ -493,9 +493,9 @@ class HDRdatasets_other_dataset(data.Dataset):
                     else:
                         img.append(j)
         else:
-            for i in os.listdir(r'C:\Users\admin\Downloads\MEFDatabase\all_select'):
+            for i in os.listdir(r'C:/Users/admin/Downloads/MEFDatabase/all_select'):
                 img_list = glob.glob(
-                    r'C:\Users\admin\Downloads\MEFDatabase\all_select' + '\\' + i + r'\*.png')
+                    r'C:/Users/admin/Downloads/MEFDatabase/all_select' + '//' + i + r'/*.png')
                 # img_list1 = glob.glob(
                     # r'C:\Users\admin\Downloads\MEFDatabase\all_select' + '\\' + i + r'\*.png')
                 for j in img_list:
